@@ -1,0 +1,22 @@
+{
+  "name": "typescript-pro-library-project",
+  "version": "1.0.0",
+  "description": "A micro library written from scratch to take advantage of the power of TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesHenry/typescript-pro-library-project.git"
+  },
+  "author": "James Henry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesHenry/typescript-pro-library-project/issues"
+  },
+  "homepage": "https://github.com/JamesHenry/typescript-pro-library-project#readme",
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  }
+}
