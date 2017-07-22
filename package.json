@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "precommit": "npm test && lint-staged"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,10 @@
   "devDependencies": {
     "@types/jest": "^20.0.4",
     "@types/node": "^8.0.14",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3",
     "ts-jest": "^20.0.7",
     "typescript": "^2.4.2"
   },
@@ -33,6 +37,12 @@
     "moduleFileExtensions": [
       "ts",
       "js"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --write --no-semi --single-quote --trailing-comma es5",
+      "git add"
     ]
   }
 }
