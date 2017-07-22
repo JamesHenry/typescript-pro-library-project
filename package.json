@@ -2,11 +2,16 @@
   "name": "typescript-pro-library-project",
   "version": "1.0.0",
   "description": "A micro library written from scratch to take advantage of the power of TypeScript",
-  "main": "index.js",
+  "main": "build/index.umd.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "build": "tsc -p tsconfig.json",
+    "prebuild": "rm -rf dist && rm -rf build",
+    "build": "tsc -p tsconfig.json && rollup -c rollup.config.js",
+    "postbuild": "cp dist/*.d.ts build/",
     "precommit": "npm test && lint-staged"
   },
   "repository": {
@@ -26,6 +31,8 @@
     "jest": "^20.0.4",
     "lint-staged": "^4.0.2",
     "prettier": "^1.5.3",
+    "rollup": "^0.45.2",
+    "rollup-plugin-sourcemaps": "^0.4.2",
     "ts-jest": "^20.0.7",
     "typescript": "^2.4.2"
   },
